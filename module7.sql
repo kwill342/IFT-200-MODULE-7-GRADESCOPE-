@@ -51,7 +51,7 @@ WHERE
     AND section.course_number = course.course_number;
 
 -- Q8
-SELECT DISTINCT course_number
+SELECT DISTINCT section.course_number
 FROM section, grade_report
 WHERE section.semester = 'Fall' 
   AND section.year = '08'
@@ -77,9 +77,9 @@ FROM course
 WHERE credit_hours = 3;
 
 -- Q13
-SELECT course_number
-FROM course, section
-WHERE instructor = 'Anderson'AND section.course_nuber = course.course_number;
+SELECT section.course_number
+FROM section
+WHERE instructor = 'Anderson';
 
 -- Q14
 SELECT course_name
