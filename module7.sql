@@ -1,12 +1,12 @@
 -- Q1
 SELECT name
-FROM students
+FROM student
 WHERE class = 4 AND major = 'CS';
 
 -- Q2
 SELECT course_number
 FROM section
-WHERE instructor = 'King' AND year = 07,08;
+WHERE instructor = 'King' AND year = 07 AND year = 08;
 
 -- Q3
 SELECT grade
@@ -26,7 +26,7 @@ WHERE department = 'CS';
 -- Q6
 SELECT course_number, semester, year
     SELECT COUNT (*) grade_report
-    WHERE grade_report.section_identifier = section.section_identifier;
+    WHERE grade_report.section_identifier = section.section_identifier
 FROM section 
 WHERE instructor = 'King';
 
@@ -58,7 +58,7 @@ WHERE section.semester = 'Fall'
   AND section.section_identifier = grade_report.section_identifier;
 
 -- Q9
-SELECT student_name
+SELECT name
 FROM grade_report, course, section, student 
 WHERE grade = 'A' AND grade_report.student_number = student.student_number AND grade_report.section_identifier = section.section_identifier AND section.course_number = course.course_number AND course_number = 'CS1310';
 
