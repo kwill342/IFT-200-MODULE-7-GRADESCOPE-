@@ -1,9 +1,35 @@
 -- Q1
+SELECT name
+FROM students
+WHERE class = 4 AND major = 'CS';
+
 -- Q2
+SELECT course_number
+FROM section
+WHERE instructor = 'King' AND year = 07,08;
+
 -- Q3
+SELECT grade
+FROM grade_report
+WHERE student_number = 8;
+
 -- Q4
+SELECT prerequisite_number
+FROM prerequisite 
+WHERE course_number = 'CS3380';
+
 -- Q5
+SELECT course_name
+FROM course
+WHERE department = 'CS';
+
 -- Q6
+SELECT course_number, semester, year
+    SELECT COUNT (*) grade_report
+    WHERE grade_report.section_identifier = section.section_identifier;
+FROM section 
+WHERE instructor = 'King';
+
 -- Q7
 SELECT 
     student.student_number, 
@@ -22,6 +48,7 @@ WHERE
     AND student.student_number = grade_report.student_number
     AND grade_report.section_identifier = section.section_identifier
     AND section.course_number = course.course_number;
+
 -- Q8
 SELECT section.course_number
 FROM section, grade_report
@@ -29,22 +56,35 @@ WHERE section.semester = 'Fall'
   AND section.year = 08 
   AND grade_report.student_number = 8
   AND section.section_identifier = grade_report.section_identifier;
+
 -- Q9
+SELECT student_name
+FROM grade_report, course, section, student 
+WHERE grade = 'A' AND grade_report.student_number = student.student_number AND grade_report.section_identifier = section.section_identifier AND section.course_number = course.course_number AND course_number = 'CS1310';
+
 -- Q10
+SELECT COUNT(*)
+FROM student;
+    
 -- Q11
 SELECT MAX(credit_hours)
 FROM course;
+
 -- Q12
-SELECT SUM(credit_hours)
-FROM course;
--- Q13
 SELECT COUNT(*)
 FROM course
 WHERE credit_hours = 3;
+
+-- Q13
+SELECT course_number
+FROM section
+WHERE instructor = 'Anderson';
+
 -- Q14
 SELECT course_name
 FROM course, section
 WHERE instructor = 'Anderson' AND section.course_number = course.course_number;
+
 -- Q15
 SELECT count (*) 
 FROM grade_report, section
