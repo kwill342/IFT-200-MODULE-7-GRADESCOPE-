@@ -6,7 +6,7 @@ WHERE class = 4 AND major = 'CS';
 -- Q2
 SELECT course_number
 FROM section
-WHERE instructor = 'King' AND year = 07 AND year = 08;
+WHERE instructor = 'King' AND year IN (07,08);
 
 -- Q3
 SELECT grade
