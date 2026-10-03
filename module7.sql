@@ -19,15 +19,15 @@ FROM prerequisite
 WHERE course_number = 'CS3380';
 
 -- Q5
-SELECT(*)
+SELECT *
 FROM course
 WHERE department = 'CS';
 
 -- Q6
-SELECT course_number, semester, year
-    SELECT COUNT(*) 
+SELECT course_number, semester, year,
+    (SELECT COUNT(*) 
     FROM grade_report
-    WHERE grade_report.section_identifier = section.section_identifier
+    WHERE grade_report.section_identifier = section.section_identifier)
 FROM section 
 WHERE instructor = 'King';
 
