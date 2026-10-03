@@ -51,7 +51,7 @@ WHERE
     AND section.course_number = course.course_number;
 
 -- Q8
-SELECT section.course_number
+SELECT course
 FROM section, grade_report
 WHERE section.semester = 'Fall' 
   AND section.year = 08 
@@ -61,7 +61,7 @@ WHERE section.semester = 'Fall'
 -- Q9
 SELECT name
 FROM student, grade_report, course, section 
-WHERE grade = 'A' AND course_number = 'CS1310' AND grade_report.student_number = student.student_number AND grade_report.section_identifier = section.section_identifier AND section.course_number = course.course_number; 
+WHERE grade = 'A' AND course.course_number = 'CS1310' AND grade_report.student_number = student.student_number AND grade_report.section_identifier = section.section_identifier AND section.course_number = course.course_number; 
 
 -- Q10
 SELECT COUNT(*)
