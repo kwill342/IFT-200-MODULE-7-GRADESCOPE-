@@ -25,7 +25,7 @@ WHERE department = 'CS';
 
 -- Q6
 SELECT course_number, semester, year
-    SELECT COUNT (*) grade_report
+    SELECT COUNT(*) grade_report
     WHERE grade_report.section_identifier = section.section_identifier
 FROM section 
 WHERE instructor = 'King';
@@ -59,7 +59,7 @@ WHERE section.semester = 'Fall'
 
 -- Q9
 SELECT name
-FROM grade_report, course, section, student 
+FROM student, grade_report, course, section 
 WHERE grade = 'A' AND grade_report.student_number = student.student_number AND grade_report.section_identifier = section.section_identifier AND section.course_number = course.course_number AND course_number = 'CS1310';
 
 -- Q10
@@ -88,4 +88,4 @@ WHERE instructor = 'Anderson' AND section.course_number = course.course_number;
 -- Q15
 SELECT count (*) 
 FROM grade_report, section
-WHERE grade = A AND course_number = 'math2410' AND grade_report.section_identifier = section.section_indentifier;
+WHERE grade = 'A' AND course_number = 'math2410' AND grade_report.section_identifier = section.section_indentifier;
