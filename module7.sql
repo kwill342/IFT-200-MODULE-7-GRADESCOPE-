@@ -78,8 +78,8 @@ WHERE credit_hours = 3;
 
 -- Q13
 SELECT course_number
-FROM section
-WHERE instructor = 'Anderson';
+FROM course, section
+WHERE instructor = 'Anderson'AND section.course_nuber = course.course_number;
 
 -- Q14
 SELECT course_name
