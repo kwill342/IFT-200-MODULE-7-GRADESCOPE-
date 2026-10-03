@@ -19,7 +19,7 @@ FROM prerequisite
 WHERE course_number = 'CS3380';
 
 -- Q5
-SELECT course_name
+SELECT(*)
 FROM course
 WHERE department = 'CS';
 
