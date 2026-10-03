@@ -51,10 +51,10 @@ WHERE
     AND section.course_number = course.course_number;
 
 -- Q8
-SELECT course
+SELECT DISTINCT course_number
 FROM section, grade_report
 WHERE section.semester = 'Fall' 
-  AND section.year = 08 
+  AND section.year = '08'
   AND grade_report.student_number = 8
   AND section.section_identifier = grade_report.section_identifier;
 
