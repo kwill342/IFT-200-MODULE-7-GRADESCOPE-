@@ -77,12 +77,12 @@ FROM course
 WHERE credit_hours = 3;
 
 -- Q13
-SELECT section.course_number
+SELECT DISTINCT section.course_number
 FROM section
 WHERE instructor = 'Anderson';
 
 -- Q14
-SELECT course_name
+SELECT DISTINCT course_name
 FROM course, section
 WHERE instructor = 'Anderson' AND section.course_number = course.course_number;
 
