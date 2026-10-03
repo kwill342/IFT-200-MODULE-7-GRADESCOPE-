@@ -89,4 +89,4 @@ WHERE instructor = 'Anderson' AND section.course_number = course.course_number;
 -- Q15
 SELECT COUNT(*)
 FROM student, grade_report, section
-WHERE grade = 'A' AND course_number = 'math2410' AND grade_report.student_number = student.student_number AND grade_report.section_identifier = section.section_identifier;
+WHERE grade = 'A' AND section.course_number = 'math2410' AND grade_report.student_number = student.student_number AND grade_report.section_identifier = section.section_identifier;
